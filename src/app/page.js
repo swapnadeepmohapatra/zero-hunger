@@ -3,7 +3,9 @@ import React from "react";
 const page = () => {
   return (
     <div>
-      <h1>Welcome</h1>
+      <h1 className="text-2xl font-semibold text-center my-6">
+        Welcome to Meal Matters
+      </h1>
       <div
         style={{
           display: "flex",

@@ -9,7 +9,7 @@ export default function Component() {
   return (
     <div className="flex flex-col h-screen">
       <header className="flex h-16 items-center justify-between px-4 bg-gray-800 text-white">
-        <h1 className="text-lg font-semibold">Hotel Food Donation Platform</h1>
+        <h1 className="text-lg font-semibold">Meal Matters</h1>
         <nav className="flex gap-4">
           <Link className="hover:underline" href="/">
             Home
