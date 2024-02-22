@@ -34,7 +34,7 @@ export default function Component() {
         </nav>
       </header>
       <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Cooked Food</CardTitle>
@@ -71,7 +71,7 @@ export default function Component() {
               </p>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
         <div>
           <Card>
             <Table>
