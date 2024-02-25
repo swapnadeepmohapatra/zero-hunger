@@ -4,6 +4,10 @@ import Link from "next/link";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/component/foooter";
+import Image from "next/image";
+import bgImage from "../kids.jpeg";
+import bgImage1 from "../rice.jpeg";
+import bgImage2 from "../topic.jpeg";
 
 export default function Component() {
   const router = useRouter();
@@ -37,6 +41,13 @@ export default function Component() {
                 Connect
               </Button>
             </CardContent>
+            <Image
+              src={bgImage2}
+              placeholder="blur"
+              style={{
+                height: "25rem",
+              }}
+            />
           </Card>
           <Card>
             <CardHeader>
@@ -49,6 +60,13 @@ export default function Component() {
                 Connect
               </Button>
             </CardContent>
+            <Image
+              src={bgImage1}
+              placeholder="blur"
+              style={{
+                height: "25rem",
+              }}
+            />
           </Card>
           <Card>
             <CardHeader>
@@ -65,6 +83,13 @@ export default function Component() {
                 Connect
               </Button>
             </CardContent>
+            <Image
+              src={bgImage}
+              placeholder="blur"
+              style={{
+                height: "25rem",
+              }}
+            />
           </Card>
         </div>
       </main>

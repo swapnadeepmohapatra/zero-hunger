@@ -4,6 +4,8 @@ import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/component/foooter";
 import { Input } from "@/components/ui/input";
+import bgImage from "../../../crop.jpeg";
+import Image from "next/image";
 
 export default function Component() {
   return (
@@ -47,6 +49,15 @@ export default function Component() {
             </Link>
           </CardContent>
         </Card>
+        <Image
+          src={bgImage}
+          placeholder="blur"
+          style={{
+            width: "50%",
+            margin: "0 auto",
+            zIndex: -1,
+          }}
+        />
       </main>
       <Footer />
     </div>

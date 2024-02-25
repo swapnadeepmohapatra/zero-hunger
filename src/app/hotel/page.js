@@ -12,6 +12,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Image from "next/image";
+import bgImage from "../fud.jpeg";
 
 export default function Component() {
   const [list, setList] = useState([
@@ -51,6 +53,18 @@ export default function Component() {
         </nav>
       </header>
       <main className="flex min-h-[calc(100vh_-_theme(spacing.16))] flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
+        <Image
+          src={bgImage}
+          placeholder="blur"
+          style={{
+            height: "100vh",
+            width: "100vw",
+            opacity: 0.3,
+            zIndex: 0,
+            position: "fixed",
+            margin: "0",
+          }}
+        />
         {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
@@ -165,6 +179,7 @@ export default function Component() {
             </Table>
           </Card>
         </div>
+
         <div>
           <Card>
             <Table>
