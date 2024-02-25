@@ -1,8 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/OaZzwk3EG4w
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+"use client";
 import Link from "next/link";
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card";
 import {
@@ -15,8 +11,29 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Component() {
+  const [list, setList] = useState([
+    {
+      type: "Fruits",
+      quantity: "200 kg",
+    },
+    {
+      type: "Vegetables",
+      quantity: "150 kg",
+    },
+    {
+      type: "Cooked Food",
+      quantity: "100 kg",
+    },
+  ]);
+
+  const [inputData, setInputData] = useState({
+    type: "",
+    quantity: "",
+  });
+
   return (
     <div className="flex flex-col w-full min-h-screen">
       <header className="flex h-16 items-center justify-between px-4 bg-gray-800 text-white">
@@ -100,7 +117,7 @@ export default function Component() {
                   <TableCell>30 kg</TableCell>
                   <TableCell>Approved</TableCell>
                   <TableCell className="text-right">
-                    <Button className="bg-green-500">Deliver</Button>
+                    <Button className="bg-green-500">Approved</Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -118,7 +135,7 @@ export default function Component() {
                   <TableCell>100 kg</TableCell>
                   <TableCell>Approved</TableCell>
                   <TableCell className="text-right">
-                    <Button className="bg-green-500">Deliver</Button>
+                    <Button className="bg-green-500">Approved</Button>
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -158,7 +175,13 @@ export default function Component() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
+                {list.map((item, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{item.type}</TableCell>
+                    <TableCell>{item.quantity}</TableCell>
+                  </TableRow>
+                ))}
+                {/* <TableRow>
                   <TableCell>Fruits</TableCell>
                   <TableCell>200 kg</TableCell>
                 </TableRow>
@@ -169,16 +192,40 @@ export default function Component() {
                 <TableRow>
                   <TableCell>Cooked Food</TableCell>
                   <TableCell>100 kg</TableCell>
-                </TableRow>
+                </TableRow> */}
                 <TableRow>
                   <TableCell>
-                    <Input placeholder="Food Type" type="text" />
+                    <Input
+                      placeholder="Food Type"
+                      type="text"
+                      value={inputData.type}
+                      onChange={(e) => {
+                        setInputData({ ...inputData, type: e.target.value });
+                      }}
+                    />
                   </TableCell>
                   <TableCell>
-                    <Input placeholder="Quantity" type="text" />
+                    <Input
+                      placeholder="Quantity"
+                      type="text"
+                      value={inputData.quantity}
+                      onChange={(e) => {
+                        setInputData({
+                          ...inputData,
+                          quantity: e.target.value,
+                        });
+                      }}
+                    />
                   </TableCell>
                   <TableCell className="text-right">
-                    <Button size="sm" className="bg-red-400">
+                    <Button
+                      size="sm"
+                      className="bg-red-400"
+                      onClick={(e) => {
+                        setList([...list, inputData]);
+                        setInputData({ type: "", quantity: "" });
+                      }}
+                    >
                       Add
                     </Button>
                   </TableCell>
